@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block main %}
+    <h2>Order Details</h2>
+    <p>Order ID: {{ items[0].id if items }}
+    <table>
+        <tr>
+            <th>UPC</th>
+            <th>Item</th>
+            <th>Paid Amount</th>
+        </tr>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.upc }}</td>
+                <td>{{ item.item }}</td> <!-- Adjust based on how your item details are structured -->
+                <td>{{ item.paid }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <p />
+    <a href="{{ url_for('orders') }}">Back to Orders List</a>
+{% endblock %}

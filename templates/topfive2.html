@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block main %}  
+    <h1>Most Expensive Items</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item_name, item_price in top_five2.items() %}
+                <tr>
+                    <td>{{ item_name }}</td>
+                    <td>{{ item_price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

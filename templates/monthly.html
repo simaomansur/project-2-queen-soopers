@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h1>Order Price Totals by Month</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Month</th>
+                <th>Total Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for month_year, total_price in monthly_totals.items() %}
+                <tr>
+                    <td>{{ month_year }}</td>
+                    <td>{{ total_price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
